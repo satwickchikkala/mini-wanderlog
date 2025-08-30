@@ -1,0 +1,61 @@
+<!-- public/dashboard.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>mini-wanderlog — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div id="userInfo">Not signed in</div>
+    <div>
+      <button id="goPlanner">Open Planner</button>
+      <button id="logoutBtn">Sign out</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Create Trip</h2>
+      <div class="row">
+        <div class="col">
+          <input id="destination" placeholder="Destination (city or place)" />
+          <div style="display:flex;gap:8px;">
+            <input id="startDate" type="date" />
+            <input id="endDate" type="date" />
+          </div>
+          <input id="days" type="number" min="1" placeholder="Number of days (optional)" />
+          <input id="budget" type="number" placeholder="Budget (USD)" />
+          <label class="toggle"><input id="aiAssistant" type="checkbox" /> Use AI Assistant</label>
+          <label>Companion:
+            <select id="companion">
+              <option value="none">None</option>
+              <option value="foodie">Foodie Guide</option>
+              <option value="history">History Expert</option>
+              <option value="adventure">Adventure Buddy</option>
+            </select>
+          </label>
+          <button id="startBtn">Plan Trip</button>
+        </div>
+
+        <div class="col">
+          <h3>Map</h3>
+          <div id="map" style="height:320px; border-radius:10px; overflow:hidden;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>My Saved Trips</h2>
+      <div id="savedTrips">Loading...</div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/app.js"></script>
+  <script type="module" src="scripts/map.js"></script>
+
+  <!-- Google Maps (optional) -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNlw7sSUI0Zt8Qe7LLuINRweGycDtvKGk&callback=initMap"></script>
+</body>
+</html>
