@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>mini-wanderlog — Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card auth-card">
+    <h1>mini-wanderlog</h1>
+
+    <!-- LOGIN BLOCK -->
+    <div id="loginBlock">
+      <h3>Sign In</h3>
+      <input id="loginEmail" type="email" placeholder="Email" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button id="loginBtn">Sign In</button>
+      <p>Don't have an account? <a href="#" id="showSignup">Create one</a></p>
+      <hr/>
+      <!-- GOOGLE SIGN IN BUTTON -->
+      <button id="googleSignIn">Sign in with Google</button>
+      <div id="authMsg" class="muted"></div>
+    </div>
+
+    <!-- SIGNUP BLOCK -->
+    <div id="signupBlock" style="display:none;">
+      <h3>Create Account</h3>
+      <input id="signupEmail" type="email" placeholder="Email" />
+      <input id="signupPassword" type="password" placeholder="Password (6+)" />
+      <button id="signupBtn">Create Account</button>
+      <p>Have an account? <a href="#" id="showLogin">Sign in</a></p>
+      <div id="signupMsg" class="muted"></div>
+    </div>
+  </div>
+
+  <!-- Load auth.js -->
+  <script type="module" src="scripts/auth.js"></script>
+</body>
+</html>
