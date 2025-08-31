@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>mini-wanderlog — Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .poi-note { font-size: 12px; color: #666; }
+    .day-block { padding: 8px 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; }
+    .badge { display:inline-block; padding:2px 6px; border-radius:6px; font-size:12px; background:#e8f5f3; }
+    .list-checks label { display:block; margin:6px 0; }
+    .muted { color:#666; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div id="plannerTitle">Planner</div>
+    <div>
+      <button id="backBtn">Back</button>
+      <button id="saveBtn">Save Itinerary</button>
+      <button id="exportPdfBtn">Export PDF</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Trip Summary</h2>
+      <div id="tripSummary">Loading...</div>
+    </div>
+
+    <div class="card row">
+      <div class="col">
+        <h3>Hotels</h3>
+        <div class="muted">Tip: select 1 preferred stay.</div>
+        <div id="hotelsList" class="list-checks">Loading...</div>
+      </div>
+      <div class="col">
+        <h3>Attractions</h3>
+        <div class="muted">Pick a few you care about — we’ll optimize the route.</div>
+        <div id="attractionsList" class="list-checks">Loading...</div>
+      </div>
+      <div class="col">
+        <h3>Restaurants</h3>
+        <div class="muted">Pick dinner spots; we’ll place them in evenings.</div>
+        <div id="restaurantsList" class="list-checks">Loading...</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2>Generated Itinerary</h2>
+        <button id="autoGenerateBtn">Auto-generate schedule from selected items</button>
+      </div>
+      <div id="generatedItinerary" class="muted">No itinerary generated yet.</div>
+    </div>
+  </div>
+
+  <!-- jsPDF + AutoTable for beautiful PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+  <script type="module" src="scripts/planner.js"></script>
+  <script type="module" src="scripts/map.js"></script>
+</body>
+</html>
